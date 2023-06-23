@@ -25,6 +25,8 @@ builder.Services.AddScoped<ITestimonialDal, EFTestimonialDal>();
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<IAboutDal, EFAboutDal>();
 builder.Services.AddScoped<IAboutService, AboutManager>();
+builder.Services.AddScoped<IBookingDal,EFBookingDal>();
+builder.Services.AddScoped<IBookingService,BookingManager>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddCors(opt =>
 {
