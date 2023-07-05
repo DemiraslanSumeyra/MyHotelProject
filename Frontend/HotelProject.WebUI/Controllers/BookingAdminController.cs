@@ -18,7 +18,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5243/api/Booking");
+            var responseMessage = await client.GetAsync("http://localhost:45181/api/Booking");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -30,7 +30,7 @@ namespace HotelProject.WebUI.Controllers
         public async Task<ResultBookingDto> GetByID(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("http://localhost:5243/api/Booking/{id}");
+            var responseMessage = await client.GetAsync("http://localhost:45181/api/Booking/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData= await responseMessage.Content.ReadAsStringAsync();
@@ -48,7 +48,7 @@ namespace HotelProject.WebUI.Controllers
                 values.Status = "Onaylandı";
                 var jsonPutData = JsonConvert.SerializeObject(values);
                 StringContent stringContent= new StringContent(jsonPutData,Encoding.UTF8,"application/json");
-                var responsePutMessage = await client.PutAsync("http://localhost:5243/api/Booking/UpdateBooking", stringContent);
+                var responsePutMessage = await client.PutAsync("http://localhost:45181/api/Booking/UpdateBooking", stringContent);
                 if (responsePutMessage.IsSuccessStatusCode)
                 {
                     return RedirectToAction("Index");
