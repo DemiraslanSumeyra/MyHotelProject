@@ -27,6 +27,8 @@ builder.Services.AddScoped<IAboutDal, EFAboutDal>();
 builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IBookingDal,EFBookingDal>();
 builder.Services.AddScoped<IBookingService,BookingManager>();
+builder.Services.AddScoped<IContactDal, EFContactDal>();
+builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddCors(opt =>
 {
