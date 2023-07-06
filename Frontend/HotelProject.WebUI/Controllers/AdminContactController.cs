@@ -36,6 +36,9 @@ namespace HotelProject.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> AddSendMessage(CreateSendMessageDto createSendMessageDto)
         {
+            createSendMessageDto.SenderMail = "admin@gmail.com";
+            createSendMessageDto.SenderName = "admin";
+            createSendMessageDto.Date=DateTime.Parse(DateTime.Now.ToShortDateString());
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createSendMessageDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
