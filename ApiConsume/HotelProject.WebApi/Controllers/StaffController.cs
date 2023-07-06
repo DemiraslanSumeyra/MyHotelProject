@@ -24,9 +24,9 @@ namespace HotelProject.WebApi.Controllers
             return Ok(values);
         }
         [HttpPost]
-        public IActionResult AddStaff(Staff staff)
+        public IActionResult AddStaff(Staff Staff)
         {
-            _staffService.TInsert(staff);
+            _staffService.TInsert(Staff);
             return Ok();
         }
         [HttpDelete("{id}")]
@@ -37,9 +37,9 @@ namespace HotelProject.WebApi.Controllers
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateStaff(Staff staff)
+        public IActionResult UpdateStaff(Staff Staff)
         {
-            _staffService.TUpdate(staff);
+            _staffService.TUpdate(Staff);
             return Ok();
         }
         [HttpGet("{id}")]
