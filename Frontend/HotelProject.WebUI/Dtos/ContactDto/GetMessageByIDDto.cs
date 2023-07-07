@@ -1,6 +1,6 @@
-﻿namespace HotelProject.WebUI.Dtos.SendMessageDto
+﻿namespace HotelProject.WebUI.Dtos.ContactDto
 {
-    public class ResultSendboxDto
+    public class GetMessageByIDDto
     {
         public int SendMessageID { get; set; }
         public string ReceiverName { get; set; }

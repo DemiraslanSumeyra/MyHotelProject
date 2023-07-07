@@ -71,9 +71,28 @@ namespace HotelProject.WebUI.Controllers
             return PartialView();
         }
 
-        public IActionResult MessageDetails(int id)
+        public async Task<IActionResult> MessageDetailsBySendbox(int id)
         {
-            id = 0;
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:45181/api/SendMessage/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<GetMessageByIDDto>(jsonData);
+                return View(values);
+            }
+            return View();
+        }
+        public async Task<IActionResult> MessageDetailsByInbox(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync($"http://localhost:45181/api/Contact/{id}");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<InboxContactDto>(jsonData);
+                return View(values);
+            }
             return View();
         }
     }
