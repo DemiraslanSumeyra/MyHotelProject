@@ -70,5 +70,11 @@ namespace HotelProject.WebUI.Controllers
         {
             return PartialView();
         }
+
+        public IActionResult MessageDetails(int id)
+        {
+            id = 0;
+            return View();
+        }
     }
 }
