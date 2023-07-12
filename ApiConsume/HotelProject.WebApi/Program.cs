@@ -33,6 +33,8 @@ builder.Services.AddScoped<IGuestDal, EFGuestDal>();
 builder.Services.AddScoped<IGuestService, GuestManager>();
 builder.Services.AddScoped<ISendMessageDal, EFSendMessageDal>();
 builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
+builder.Services.AddScoped<IMessageCategoryDal, EFMessageCategoryDal>();
+builder.Services.AddScoped<IMessageCategoryService,MessageCategoryManager>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddCors(opt =>
 {
