@@ -35,6 +35,8 @@ builder.Services.AddScoped<ISendMessageDal, EFSendMessageDal>();
 builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
 builder.Services.AddScoped<IMessageCategoryDal, EFMessageCategoryDal>();
 builder.Services.AddScoped<IMessageCategoryService,MessageCategoryManager>();
+builder.Services.AddScoped<IWorkLocationDal, EFWorkLocationDal>();
+builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddCors(opt =>
 {
