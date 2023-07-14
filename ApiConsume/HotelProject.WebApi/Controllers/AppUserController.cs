@@ -1,6 +1,8 @@
 ﻿using HotelProject.BusinessLayer.Abstract;
+using HotelProject.WebUI.Dtos.AppUserDto;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace HotelProject.WebApi.Controllers
 {
@@ -21,5 +23,6 @@ namespace HotelProject.WebApi.Controllers
             var values = _appUserService.TUserListWithWorkLocation();
             return Ok(values);
         }
+
     }
 }
