@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <Folder Include="ValidationRules\RoomValidationRules\" />
+    <Folder Include="ViewComponents\Dashboard\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
